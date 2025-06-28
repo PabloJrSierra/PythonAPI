@@ -9,7 +9,7 @@ app = FastAPI()
 # Permitir acceso desde tu frontend de Vercel
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://front-pedidos-three.vercel.app"],  # dominio de tu frontend
+    allow_origins=["https://front-pedidos-three.vercel.app/"],  # dominio de tu frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
