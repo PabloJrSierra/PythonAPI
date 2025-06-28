@@ -16,12 +16,10 @@ app.add_middleware(
     allow_headers=["*"],               # Permite todos los headers
 )
 
-
 scaler = joblib.load("modelos/scaler.pkl")
 kmeans = joblib.load("modelos/kmeans_model.pkl")
 with open("modelos/etiquetas.json", "r") as f:
     etiquetas = json.load(f)
-
 class UsuarioInput(BaseModel):
     usuario_id: str
     Frescos: int
