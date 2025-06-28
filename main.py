@@ -10,7 +10,7 @@ app = FastAPI()
 # Agrega el middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://front-pedidos-three.vercel.app/"],             # Lista blanca de orígenes
+    allow_origins=["https://front-pedidos-three.vercel.app"],             # Lista blanca de orígenes
     allow_credentials=True,            # Necesario si usas cookies o auth
     allow_methods=["*"],               # GET, POST, PUT, DELETE, etc.
     allow_headers=["*"],               # Permite todos los headers
