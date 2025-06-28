@@ -3,8 +3,17 @@ from pydantic import BaseModel
 import joblib
 import json
 from datetime import datetime
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+# Permitir acceso desde tu frontend de Vercel
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://front-pedidos-three.vercel.app"],  # dominio de tu frontend
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 scaler = joblib.load("modelos/scaler.pkl")
 kmeans = joblib.load("modelos/kmeans_model.pkl")
