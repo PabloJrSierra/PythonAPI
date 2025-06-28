@@ -6,15 +6,11 @@ from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-origins = [
-    "https://front-pedidos-three.vercel.app",
-    "http://localhost:3000",  # para pruebas locales
-]
 
 # Agrega el middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,             # Lista blanca de orígenes
+    allow_origins="https://front-pedidos-three.vercel.app/",             # Lista blanca de orígenes
     allow_credentials=True,            # Necesario si usas cookies o auth
     allow_methods=["*"],               # GET, POST, PUT, DELETE, etc.
     allow_headers=["*"],               # Permite todos los headers
